@@ -11,39 +11,48 @@
 <body>
 <!--First row header-->
 <nav class="header">
-	<nav class="container">
-		<h1>This is the hangman Game</h1>
+	<nav class="container text-center">
 	</nav>	
 </nav>
 <!--Second Row - Main -->
-<main>
+<main class="text-center">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12 text-center">
 				<section class="top-content">
-					<img src="assets/images/psychic.jpeg">
-					<h3>This could be a header!</h3>
+					<img src="assets/images/hangman.jpg" alt="My Image">
 				</section>				
 			</div>			
 		</div>		
 	</div>
-	<div class="row">
-		<div class="col-md-6">
+	<div class="row content-section">
+	<h1 class="head" id="guessedWord"></h1>
+		<div class="col-md-3">
+			<!--left column-->		
+		</div>		
+		<div class="col-md-3 column">
 			<!--left column-->
-			<section class="left-section">
-				This is the left column
+			<section class="left-section text-center">
+				<img class="img img-fluid" src="assets/images/hang.jpg" alt="My Image">
 			</section>			
 		</div>
-		<div class="col-md-6">
-			<section class="right-section">
-				This is the right section where we will put scores
+		<div class="col-md-3 column">
+			<section class="right-section text-center">
+				<p class="start">Press a letter key to start.</p>
 				<p id="message"></p>
 				<p id="randomLetter"></p>
 				<p id="wins">Wins:</p>
-				<p id="guessesLeft">Guesses Left:</p>
-				<p id="lettersGuessed">Your Guesses so far:</p>
+				<p>Current Word</p>
+				<p id ="blanks"></p>
+				<p>Number of guesses remaining</p>
+				<p id="guessesLeft">12</p>
+				<p>Letters already guessed</p>
+				<p id="lettersAlreadyGuessed">None so far</p>		
 			</section>
-		</div>		
+		</div>
+		<div class="col-md-3">
+		  <!--right column-->
+		</div>	
 	</div>
 </main>
   <!-- Last Row - Footer -->
@@ -52,6 +61,6 @@
       <p>&copy; Copyright 2017 Maria</p>
     </div>
   </footer>
-	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<script type="text/javascript" src="assets/javascript/game1.js"></script>
 </body>
 </html>

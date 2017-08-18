@@ -1,6 +1,7 @@
-var charCode, keyPress, wins, lettersGuessed, guessesLeft, message, winsCount, guessesCount, letter, arr;
+var charCode, keyPress, wins, lettersGuessed, guessesLeft, message, winsCount, guessesCount, letter, wordToGuess, blanks, arr, blankSpaces;
 
 arr = "";
+blanks = "";
 
 //get elements
 wins = document.getElementById("wins");
@@ -8,18 +9,25 @@ lettersGuessed = document.getElementById("lettersGuessed");
 randomLetter = document.getElementById("randomLetter");
 guessesLeft = document.getElementById("guessesLeft");
 message = document.getElementById("message");
+blanks = document.getElementById("blanks");
 
 
-resetVariables();l
+resetVariables();
 setVariables();
 
 function setVariables(){
-	letter = String.fromCharCode(97 + Math.floor(Math.random() * 26));	
+	wordToGuess = "Disneyland";	
 	keyCode = "";
 	keyPress = "";
 	guessesCount = 12;
 	getlettersGuessed();
 	arr = [];
+	blankSpaces = [];
+	
+	for(i = 0; i < wordToGuess.length; i++){
+		blankSpaces.push("_");
+	}
+	blanks.innerHTML = "Word to Guess   " + blankSpaces.join(" ");
 
 }
 function resetVariables(){	
@@ -65,7 +73,10 @@ function checkGuesses(count){
 }
 
 function checkWinsLosses(keyPress){
-	if(letter === keyPress){			
+	var letterIndex = wordToGuess.indexOf(keyPress);
+	console.log(letterIndex);
+	
+	if(letterIndex >= 0){			
 		winsCount++;
 		return true;
 	}else{
