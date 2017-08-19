@@ -1,3 +1,5 @@
+var PRODUCTION = false;
+
 var keyPress,
   words,
   keyCode,
@@ -128,11 +130,21 @@ function validateKeys(keyCode) {
   }
 }
 function playAudio(audioword){ 
-    aud = new Audio("Hangman-Game/assets/audio/" + audioword.toLowerCase() + ".mp3");
+  var title = audioword.toLowerCase();
+  console.log("TITLE: ", title);
+  var path = "";
+  if (PRODUCTION) { path += "Hangman-Game"; }
+  path += '/assets/audio/';
+  var aud = new Audio(path + title + ".mp3");
         aud.play();
         console.log('aud', aud);
   }
 function setImage(audioword){
-  image.src = "Hangman-Game/assets/images/" + audioword.toLowerCase() + ".jpeg";
+  var title = audioword.toLowerCase();
+  console.log("TITLE:", title);
+  var path = "";
+  if (PRODUCTION) { path += "Hangman-Game"; }
+  path += '/assets/audio/';
+  image.src = path + title + ".jpeg";
   console.log('image.src', image.src);
 }
